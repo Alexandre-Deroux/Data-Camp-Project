@@ -30,6 +30,16 @@ pip install -U -r requirements.txt
 If you are using `conda`, we provide an `environment.yml` file for similar
 usage.
 
+### Download data
+
+You need to have this file in the data folder: data_municipal_farming_areas_2008_2023_agencybio.csv
+
+Then, in the "Data-Camp-Project" folder, run the following script:
+
+```bash
+python download_data.py
+```
+
 ### Challenge description
 
 Let us analyze the dataset in more details.
