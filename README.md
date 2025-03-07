@@ -30,6 +30,14 @@ pip install -U -r requirements.txt
 If you are using `conda`, we provide an `environment.yml` file for similar
 usage.
 
+### Create data
+
+You need to create data. Run the following script:
+
+```bash
+python create_data.py
+```
+
 ### Download data
 
 You need to have this file in the data folder: data_municipal_farming_areas_2008_2023_agencybio.csv

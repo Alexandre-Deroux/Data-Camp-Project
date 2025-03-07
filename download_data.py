@@ -27,4 +27,4 @@ if __name__ == '__main__':
 
     X_train.to_csv(DATA_PATH / 'X_train.csv', index=False)
     X_test.to_csv(DATA_PATH / 'X_test.csv', index=False)
-    print('done')
+    print('Done')

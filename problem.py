@@ -21,13 +21,11 @@ score_types = [
     rw.score_types.Accuracy(name='accuracy', precision=4),
 ]
 
-
 def get_cv(X, y):
     cv = StratifiedShuffleSplit(n_splits=8, test_size=0.2, random_state=42)
     return cv.split(X, y)
 
-
-# read data
+# Read data
 def load_data(path='.', file='X_train.csv'):
     path = Path(path) / "data"
     X_df = pd.read_csv(path / file)
