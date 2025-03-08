@@ -1,5 +1,7 @@
 import pandas as pd
 
+print('Creating the data...')
+
 fichiers_csv = [
     "data/operators.csv",
     "data/surface_area_by_production.csv",
@@ -19,7 +21,7 @@ colonnes = [
     "commune"
 ]
 
-df_op = pd.read_csv(fichiers_csv[0])
+df_op = pd.read_csv(fichiers_csv[0], low_memory=False)
 df_op = df_op.rename(columns={
     "coderegion": "code_region",
     "codedepartement": "code_departement",
@@ -32,7 +34,7 @@ df_op = df_op.rename(columns={
 })
 df_op = df_op.dropna(subset=colonnes)
 
-df_surf = pd.read_csv(fichiers_csv[1])
+df_surf = pd.read_csv(fichiers_csv[1], low_memory=False)
 df_surf = df_surf.rename(columns={
     "coderegion": "code_region",
     "codedepartement": "code_departement",
@@ -50,7 +52,7 @@ df_surf = df_surf.rename(columns={
 })
 df_surf = df_surf.dropna(subset=colonnes)
 
-df_chep = pd.read_csv(fichiers_csv[2])
+df_chep = pd.read_csv(fichiers_csv[2], low_memory=False)
 df_chep = df_chep.rename(columns={
     "coderegion": "code_region",
     "codedepartement": "code_departement",
@@ -72,8 +74,6 @@ merged_df = pd.merge(
     on=colonnes,
     how='outer'
 )
-print(merged_df.shape)
-merged_df
 
 merged_df_2 = pd.merge(
     merged_df,
@@ -81,10 +81,8 @@ merged_df_2 = pd.merge(
     on=colonnes,
     how='outer'
 )
-print(merged_df_2.shape)
-merged_df_2
 
 merged_df_2 = merged_df_2.dropna(subset=["code_activites"])
-print(merged_df_2.shape)
 
 merged_df_2.to_csv("data/data_municipal_farming_areas_2008_2023_agencybio.csv", index=False, encoding='utf-8')
+print("Done")
