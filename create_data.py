@@ -1,6 +1,6 @@
 import pandas as pd
 
-print('Creating the data...')
+print('Creating the data...', end='', flush=True)
 
 fichiers_csv = [
     "data/operators.csv",
@@ -85,4 +85,5 @@ merged_df_2 = pd.merge(
 merged_df_2 = merged_df_2.dropna(subset=["code_activites"])
 
 merged_df_2.to_csv("data/data_municipal_farming_areas_2008_2023_agencybio.csv", index=False, encoding='utf-8')
+
 print("Done")

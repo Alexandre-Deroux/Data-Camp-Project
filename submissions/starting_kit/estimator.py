@@ -8,4 +8,4 @@ pipe = make_pipeline(
     )
 
 def get_estimator():
-      return pipe
+    return pipe

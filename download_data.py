@@ -9,7 +9,8 @@ if __name__ == '__main__':
         DATA_PATH.mkdir()
 
     print('Loading the data...', end='', flush=True)
-    data = pd.read_csv('data/data_municipal_farming_areas_2008_2023_agencybio.csv', low_memory=False)
+
+    data = pd.read_csv(DATA_PATH / 'data_municipal_farming_areas_2008_2023_agencybio.csv', low_memory=False)
 
     X = data.drop(columns=["production_principale", "activites", "code_activites"])
     y = data["code_activites"]
@@ -27,4 +28,5 @@ if __name__ == '__main__':
 
     X_train.to_csv(DATA_PATH / 'X_train.csv', index=False)
     X_test.to_csv(DATA_PATH / 'X_test.csv', index=False)
+
     print('Done')

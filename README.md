@@ -4,7 +4,7 @@ AVAKIAN Alexia, DEROUX Alexandre, ERRAJI Kenza, GUILLAUME Constantin, MARIN-BERT
 
 ## Introduction
 
-The dataset originates from the agricultural agency "Agence Bio" and aims to track farming activities across French municipalities from 2008 to 2023. It includes detailed information on the location of the farming parcels (region, department, etc.) and the usage of these parcels (surface, type of production, etc.).
+The [dataset](https://www.data.gouv.fr/fr/datasets/historique-detaille-des-surfaces-cheptels-et-nombre-doperateurs-par-commune) originates from the agricultural agency [Agence Bio](https://www.agencebio.org) and aims to track farming activities across French municipalities from 2008 to 2023. It includes detailed information on the location of the farming parcels (region, department, etc.) and the usage of these parcels (surface, type of production, etc.).
 
 This data covers metropolitan France and the DROMs. This is anonymized data, i.e. the information concerning the natural or legal person who cultivates these plots is absent.
 
@@ -66,7 +66,7 @@ It includes different types of information, among which we can find:
 - `code_epci`: numeric identifier for the Public Inter-municipal Cooperation Establishments (Etablissements Publics de Coopération Intercommunale)
 - `epci`: name of the EPCI
 - `code_insee_commune`: numeric identifier assigned to the municipality by the National Institute of Statistics and Economic Studies, INSEE (Institut National de la Statistique et des Etudes Economiques)
-`code_postal_commune`: postal code of the municipality
+- `code_postal_commune`: postal code of the municipality
 - `commune`: name of the municipality
 
 #### Farming activity
@@ -115,4 +115,4 @@ ramp-test --help
 ### To go further
 
 You can find more information regarding `ramp-workflow` in the
-[dedicated documentation](https://paris-saclay-cds.github.io/ramp-docs/ramp-workflow/stable/using_kits.html)
+[dedicated documentation](https://paris-saclay-cds.github.io/ramp-docs/ramp-workflow/stable/using_kits.html).
