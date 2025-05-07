@@ -2,20 +2,20 @@ from pathlib import Path
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-DATA_PATH = Path('data')
+DATA_PATH = Path("data")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if not DATA_PATH.exists():
         DATA_PATH.mkdir()
 
-    print('Loading the data...', end='', flush=True)
+    print("Loading the data...", end=" ", flush=True)
 
-    data = pd.read_csv(DATA_PATH / 'data_municipal_farming_areas_2008_2023_agencybio.csv', low_memory=False)
+    data = pd.read_csv(DATA_PATH / "agence_bio_2008_2023.csv", low_memory=False)
 
     X = data.drop(columns=["production_principale", "activites", "code_activites"])
     y = data["code_activites"]
 
-    for col in X.select_dtypes(include=['object']).columns:
+    for col in X.select_dtypes(include=["object"]).columns:
         X[col] = X[col].astype(str)
         X[col] = X[col].astype("category").cat.codes
 
@@ -26,7 +26,7 @@ if __name__ == '__main__':
         X, test_size=0.2, random_state=42, stratify=y
     )
 
-    X_train.to_csv(DATA_PATH / 'X_train.csv', index=False)
-    X_test.to_csv(DATA_PATH / 'X_test.csv', index=False)
+    X_train.to_csv(DATA_PATH / "X_train.csv", index=False)
+    X_test.to_csv(DATA_PATH / "X_test.csv", index=False)
 
-    print('Done')
+    print("Done")

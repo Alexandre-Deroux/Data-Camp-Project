@@ -1,4 +1,4 @@
-# Municipal farming area RAMP challenge
+# Farming activity RAMP challenge
 
 AVAKIAN Alexia, DEROUX Alexandre, ERRAJI Kenza, GUILLAUME Constantin, MARIN-BERTIN Guillaume, TOZZA Jean
 
@@ -41,7 +41,7 @@ python create_data.py
 
 ### Download data
 
-You need to have this file in the data folder: data_municipal_farming_areas_2008_2023_agencybio.csv.
+You need to have this file in the data folder: agence_bio_2008_2023.csv.
 
 In the "Data-Camp-Project" folder, run the following script:
 
